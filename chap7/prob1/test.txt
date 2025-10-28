@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "student.h"
+
+int main(void){
+    FILE *fp = fopen("test.txt","wb");
+    if(!fp){perror("fopen"); return 1;}
+    struct student s[3] = {
+        {1001,"kim",90},
+        {1002,"lee",85},
+        {1003,"park",70}
+    };
+    fwrite(s, sizeof(struct student), 3, fp);
+    fclose(fp);
+    puts("test.txt 생성 완료");
+    return 0;
+}
+
