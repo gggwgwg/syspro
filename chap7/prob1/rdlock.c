@@ -42,4 +42,7 @@ int main(int argc, char *argv[]) {
     close(fd);
     return 0;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f9398552a7a04525647112aecc2bd27f94c675e8
