@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+struct student {
+    int hakbun;
+    char name[20];
+};
+
+int main() {
+    int n;
+
+    printf("몇 명의 학생을 입력하겠습니까? ");
+    scanf("%d", &n);
+
+    struct student st[n];
+
+    printf("%d 명의 학번과 이름을 입력하세요.\n", n);
+
+    for (int i = 0; i < n; i++) {
+        printf("%d번째 학생 학번 입력: ", i + 1);
+        scanf(" %d", &st[i].hakbun);  
+
+        printf("%d번째 학생 이름 입력: ", i + 1);
+        scanf(" %s", st[i].name);      
+    }
+
+    printf("\n* 학생 정보 (역순) *\n");
+
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d %s\n", st[i].hakbun, st[i].name);
+    }
+
+    return 0;
+}
