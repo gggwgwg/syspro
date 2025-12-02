@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <unistd.h>
+
+int stop = 0;
+
+void intHandler()
+{
+    printf("Interrupt!\n");
+    stop = 1;   // 종료 요청
+}
+
+int main()
+{
+    signal(SIGINT, intHandler);
+
+    while (!stop)
+        pause();
+
+    printf("end\n");
+    return 0;
+}
